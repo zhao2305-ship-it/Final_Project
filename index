@@ -59,6 +59,27 @@
       overflow-x: auto;
       font-size: 13px;
     }
+    .video-box {
+      background: #0b1224;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .video-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #3b82f6;
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .video-btn:hover {
+      background: #2563eb;
+    }
     footer {
       margin-top: 48px;
       text-align: center;
@@ -71,63 +92,71 @@
 <body>
   <div class="container">
 
+    <!-- ================= Video Section ================= -->
+    <div class="video-box">
+      <h2>Demo Video</h2>
+      <p class="muted">
+        Click the button below to watch the full demonstration video.
+      </p>
+      <a class="video-btn"
+         href="https://drive.google.com/file/d/1T_Wx7pbfscUq51F0H5qBhabVJYxCsvds/view"
+         target="_blank" rel="noopener noreferrer">
+        ▶ Watch Demo Video
+      </a>
+    </div>
+
+    <!-- ================= Title ================= -->
     <h1>Final Project – Water Pinball</h1>
     <p class="muted">
       A real-time 3D water simulation combined with a small pinball-style game.
     </p>
 
+    <!-- ================= About ================= -->
     <div class="box">
       <h2>What this project is about</h2>
       <p>
-        This project started as a simple water surface simulation. The main idea was to show how water moves over time,
-        how light creates highlights on the surface, and how objects under the water look distorted.
+        This project started as a water surface simulation that focuses on waves, lighting,
+        and how objects under the water look distorted.
       </p>
       <p>
-        While working on it, I realized that a purely visual demo looks nice but is not always very engaging to watch.
-        To make the project more interesting and easier to demonstrate, I turned it into a small interactive game.
+        During development, I decided to add interaction to make the demo more engaging.
+        In the final version, a ball is launched into the scene and continuously bounces
+        off the walls and a center cube.
       </p>
       <p>
-        In the final version, the water surface reacts directly to gameplay events. A ball is launched into the scene,
-        and every time it hits a wall or the center cube, it creates strong ripples on the water. The goal is to get the
-        ball into the exit area within 15 seconds.
+        Every collision creates strong ripples on the water surface. The goal is to guide
+        the ball into the exit area within 15 seconds.
       </p>
     </div>
 
+    <!-- ================= Controls ================= -->
     <div class="box">
       <h2>How to interact</h2>
       <ul>
         <li>Mouse left drag: rotate the camera</li>
         <li>Mouse wheel: zoom in and out</li>
-        <li>Left / Right arrow keys: adjust launch angle (before launch)</li>
+        <li>Left / Right arrow keys: adjust launch angle</li>
         <li><code>Enter</code>: launch the ball or restart</li>
         <li><code>R</code>: reset the game</li>
         <li><code>1</code> / <code>2</code> / <code>3</code>: change wave strength</li>
         <li><code>ESC</code>: quit</li>
       </ul>
-      <p class="muted">
-        Win condition: reach the exit zone within 15 seconds.  
-        Lose condition: time runs out.
-      </p>
     </div>
 
+    <!-- ================= Class Connection ================= -->
     <div class="box">
       <h2>Connection to the class</h2>
       <p>
-        This project uses several concepts discussed in class. The water animation is time-based and updated every frame.
-        The rendering is done with OpenGL using custom GLSL vertex and fragment shaders.
-      </p>
-      <p>
-        Basic lighting models are used for both the water surface and the ball, including diffuse and specular lighting.
-        The underwater image is sampled as a texture and distorted based on the water motion, which creates a
-        refraction-like effect.
+        The project uses time-based animation, GLSL shaders, and basic lighting models.
+        The underwater image is sampled as a texture and distorted based on water motion,
+        creating a refraction-like effect.
       </p>
     </div>
 
+    <!-- ================= Build ================= -->
     <div class="box">
       <h2>Files and build</h2>
-      <p>
-        Required files:
-      </p>
+      <p>Required files:</p>
       <ul>
         <li><code>simple_water.cpp</code></li>
         <li><code>Hachimi.bmp</code> (must be in the same folder)</li>
@@ -140,14 +169,6 @@ g++ simple_water.cpp -o water.exe ^
   -lmingw32 -lSDL2main -lSDL2 -lglew32 -lopengl32
 ./water.exe
       </pre>
-    </div>
-
-    <div class="box">
-      <h2>Future ideas</h2>
-      <p>
-        If I had more time, I would like to improve the realism of the water by adding better reflections or more detailed
-        surface motion. From the gameplay side, more obstacles or levels could also make the interaction more interesting.
-      </p>
     </div>
 
     <footer>
