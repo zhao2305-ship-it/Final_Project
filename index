@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Final Project – Water Pinball</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #0e1628;
+      color: #eaeefb;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 18px;
+      margin-top: 32px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin: 10px 0;
+      color: #dbe2ff;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    li {
+      margin: 6px 0;
+    }
+    .box {
+      background: #141f3a;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 16px;
+    }
+    .muted {
+      color: rgba(234,238,251,0.75);
+    }
+    code {
+      background: rgba(255,255,255,0.08);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+    pre {
+      background: rgba(0,0,0,0.35);
+      padding: 12px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 13px;
+    }
+    footer {
+      margin-top: 48px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(234,238,251,0.6);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>Final Project – Water Pinball</h1>
+    <p class="muted">
+      A real-time 3D water simulation combined with a small pinball-style game.
+    </p>
+
+    <div class="box">
+      <h2>What this project is about</h2>
+      <p>
+        This project started as a simple water surface simulation. The main idea was to show how water moves over time,
+        how light creates highlights on the surface, and how objects under the water look distorted.
+      </p>
+      <p>
+        While working on it, I realized that a purely visual demo looks nice but is not always very engaging to watch.
+        To make the project more interesting and easier to demonstrate, I turned it into a small interactive game.
+      </p>
+      <p>
+        In the final version, the water surface reacts directly to gameplay events. A ball is launched into the scene,
+        and every time it hits a wall or the center cube, it creates strong ripples on the water. The goal is to get the
+        ball into the exit area within 15 seconds.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>How to interact</h2>
+      <ul>
+        <li>Mouse left drag: rotate the camera</li>
+        <li>Mouse wheel: zoom in and out</li>
+        <li>Left / Right arrow keys: adjust launch angle (before launch)</li>
+        <li><code>Enter</code>: launch the ball or restart</li>
+        <li><code>R</code>: reset the game</li>
+        <li><code>1</code> / <code>2</code> / <code>3</code>: change wave strength</li>
+        <li><code>ESC</code>: quit</li>
+      </ul>
+      <p class="muted">
+        Win condition: reach the exit zone within 15 seconds.  
+        Lose condition: time runs out.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Connection to the class</h2>
+      <p>
+        This project uses several concepts discussed in class. The water animation is time-based and updated every frame.
+        The rendering is done with OpenGL using custom GLSL vertex and fragment shaders.
+      </p>
+      <p>
+        Basic lighting models are used for both the water surface and the ball, including diffuse and specular lighting.
+        The underwater image is sampled as a texture and distorted based on the water motion, which creates a
+        refraction-like effect.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Files and build</h2>
+      <p>
+        Required files:
+      </p>
+      <ul>
+        <li><code>simple_water.cpp</code></li>
+        <li><code>Hachimi.bmp</code> (must be in the same folder)</li>
+      </ul>
+
+      <p class="muted">Build and run (Windows, MSYS2 UCRT64):</p>
+      <pre>
+cd /d/Final_project
+g++ simple_water.cpp -o water.exe ^
+  -lmingw32 -lSDL2main -lSDL2 -lglew32 -lopengl32
+./water.exe
+      </pre>
+    </div>
+
+    <div class="box">
+      <h2>Future ideas</h2>
+      <p>
+        If I had more time, I would like to improve the realism of the water by adding better reflections or more detailed
+        surface motion. From the gameplay side, more obstacles or levels could also make the interaction more interesting.
+      </p>
+    </div>
+
+    <footer>
+      Final Project – Water Pinball
+    </footer>
+
+  </div>
+</body>
+</html>
