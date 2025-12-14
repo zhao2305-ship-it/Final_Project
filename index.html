@@ -3,88 +3,88 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Final Project – Water Pinball</title>
+  <title>Final Project – Water Surface & Caustics</title>
+
   <style>
     body {
       margin: 0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: #0e1628;
-      color: #eaeefb;
-      line-height: 1.6;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.65;
     }
+
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 32px 20px 60px;
     }
+
     h1 {
-      font-size: 28px;
-      margin-bottom: 8px;
+      font-size: 30px;
+      margin-bottom: 6px;
     }
+
     h2 {
-      font-size: 18px;
-      margin-top: 32px;
+      font-size: 20px;
+      margin-top: 36px;
       margin-bottom: 10px;
     }
+
     p {
-      margin: 10px 0;
-      color: #dbe2ff;
+      margin: 12px 0;
+      color: #d1d5db;
     }
+
     ul {
-      margin-left: 20px;
+      margin-left: 22px;
     }
+
     li {
       margin: 6px 0;
     }
-    .box {
-      background: #141f3a;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px;
-      padding: 16px;
-      margin-top: 16px;
-    }
+
     .muted {
-      color: rgba(234,238,251,0.75);
+      color: rgba(229,231,235,0.75);
     }
-    code {
-      background: rgba(255,255,255,0.08);
-      padding: 2px 6px;
-      border-radius: 6px;
-      font-size: 13px;
-    }
-    pre {
-      background: rgba(0,0,0,0.35);
-      padding: 12px;
-      border-radius: 10px;
-      overflow-x: auto;
-      font-size: 13px;
-    }
-    .video-box {
-      background: #0b1224;
-      border: 1px solid rgba(255,255,255,0.12);
+
+    .box {
+      background: #111827;
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: 14px;
       padding: 18px;
-      margin-bottom: 24px;
+      margin-top: 20px;
+    }
+
+    .video-box {
+      background: #020617;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 28px;
       text-align: center;
     }
+
     .video-btn {
       display: inline-block;
-      margin-top: 12px;
-      padding: 10px 18px;
+      margin-top: 14px;
+      padding: 10px 20px;
       border-radius: 999px;
       background: #3b82f6;
       color: white;
-      font-weight: 500;
       text-decoration: none;
+      font-weight: 500;
     }
+
     .video-btn:hover {
       background: #2563eb;
     }
+
     footer {
-      margin-top: 48px;
+      margin-top: 60px;
       text-align: center;
       font-size: 13px;
-      color: rgba(234,238,251,0.6);
+      color: rgba(229,231,235,0.6);
     }
   </style>
 </head>
@@ -92,87 +92,125 @@
 <body>
   <div class="container">
 
-    <!-- ================= Video Section ================= -->
+    <!-- ================= Demo Video ================= -->
     <div class="video-box">
-      <h2>Demo Video</h2>
+      <h2>Project Demo Video</h2>
       <p class="muted">
-        Click the button below to watch the full demonstration video.
+        Click below to watch the full demonstration video.
       </p>
-      <a class="video-btn"
-         href="https://drive.google.com/file/d/1T_Wx7pbfscUq51F0H5qBhabVJYxCsvds/view"
-         target="_blank" rel="noopener noreferrer">
-        ▶ Watch Demo Video
+      <a
+        class="video-btn"
+        href="https://drive.google.com/file/d/1T_Wx7pbfscUq51F0H5qBhabVJYxCsvds/view"
+        target="_blank"
+        rel="noopener noreferrer">
+        ▶ Watch Demo
       </a>
     </div>
 
     <!-- ================= Title ================= -->
-    <h1>Final Project – Water Pinball</h1>
+    <h1>Final Project – Real-Time Water Surface & Caustics</h1>
     <p class="muted">
-      A real-time 3D water simulation combined with a small pinball-style game.
+      A real-time OpenGL scene focusing on animated water, lighting, and caustic effects.
     </p>
 
-    <!-- ================= About ================= -->
+    <!-- ================= Project Description ================= -->
     <div class="box">
-      <h2>What this project is about</h2>
-      <p>
-        This project started as a water surface simulation that focuses on waves, lighting,
-        and how objects under the water look distorted.
-      </p>
-      <p>
-        During development, I decided to add interaction to make the demo more engaging.
-        In the final version, a ball is launched into the scene and continuously bounces
-        off the walls and a center cube.
-      </p>
-      <p>
-        Every collision creates strong ripples on the water surface. The goal is to guide
-        the ball into the exit area within 15 seconds.
-      </p>
-    </div>
+      <h2>Project Description</h2>
 
-    <!-- ================= Controls ================= -->
-    <div class="box">
-      <h2>How to interact</h2>
-      <ul>
-        <li>Mouse left drag: rotate the camera</li>
-        <li>Mouse wheel: zoom in and out</li>
-        <li>Left / Right arrow keys: adjust launch angle</li>
-        <li><code>Enter</code>: launch the ball or restart</li>
-        <li><code>R</code>: reset the game</li>
-        <li><code>1</code> / <code>2</code> / <code>3</code>: change wave strength</li>
-        <li><code>ESC</code>: quit</li>
-      </ul>
-    </div>
-
-    <!-- ================= Class Connection ================= -->
-    <div class="box">
-      <h2>Connection to the class</h2>
       <p>
-        The project uses time-based animation, GLSL shaders, and basic lighting models.
-        The underwater image is sampled as a texture and distorted based on water motion,
-        creating a refraction-like effect.
+        I am working on this final project by myself. The original goal of this project was
+        to create a small real-time scene with a moving water surface. The water rises and
+        falls over time, shows bright highlights, and changes its appearance depending on
+        the viewing angle, similar to a real lake.
+      </p>
+
+      <p>
+        When viewed from the side, the water appears more reflective, and when viewed from
+        above, it becomes more transparent. Under the water surface, I placed a simple
+        ground plane where I aimed to show the soft, moving light patterns that appear when
+        sunlight passes through water.
+      </p>
+
+      <p>
+        The entire project is built using OpenGL and GLSL shaders. Since the focus is on
+        water motion, reflections, transparency, and caustics, the final visual result is
+        intentionally very different from any previous assignments in the course.
       </p>
     </div>
 
-    <!-- ================= Build ================= -->
+    <!-- ================= Progress ================= -->
     <div class="box">
-      <h2>Files and build</h2>
-      <p>Required files:</p>
-      <ul>
-        <li><code>simple_water.cpp</code></li>
-        <li><code>Hachimi.bmp</code> (must be in the same folder)</li>
-      </ul>
+      <h2>Progress Update and Development Direction</h2>
 
-      <p class="muted">Build and run (Windows, MSYS2 UCRT64):</p>
-      <pre>
-cd /d/Final_project
-g++ simple_water.cpp -o water.exe ^
-  -lmingw32 -lSDL2main -lSDL2 -lglew32 -lopengl32
-./water.exe
-      </pre>
+      <p>
+        At the midpoint of the project, the core structure was already in place. I had a
+        working rendering framework and a subdivided plane that acted as the water surface.
+        This plane was animated using time-based wave functions, allowing the surface to
+        move smoothly over time.
+      </p>
+
+      <p>
+        I added basic lighting so the water surface could show moving highlights as the
+        waves shift. A simple Fresnel effect was also implemented, making the water more
+        reflective at shallow angles and clearer when viewed from above.
+      </p>
+
+      <p>
+        At that stage, the underwater ground plane was visible, and I began working on
+        animated caustics. While the caustics were functional, they initially appeared
+        rough and required further refinement.
+      </p>
+
+      <p>
+        As the project developed further, I expanded the original visual demo into a more
+        interactive scene. To better demonstrate how the water reacts to dynamic objects,
+        I added a small pinball-style interaction. Moving objects collide with boundaries
+        and obstacles, and each collision produces strong ripples on the water surface.
+      </p>
+    </div>
+
+    <!-- ================= Challenges ================= -->
+    <div class="box">
+      <h2>Challenges and Concerns</h2>
+
+      <p>
+        One major concern during development was surface normal calculation. If the
+        normals are not computed smoothly, reflections and highlights can flicker or look
+        unstable.
+      </p>
+
+      <p>
+        Another challenge was tuning the caustic patterns. Caustics can easily become too
+        bright or move too quickly, which breaks the illusion of realistic water. Finding
+        the right balance took several iterations.
+      </p>
+
+      <p>
+        Performance was also an important consideration. A dense water mesh combined with
+        multiple wave components can reduce frame rate, so I needed to balance visual
+        quality with real-time performance.
+      </p>
+    </div>
+
+    <!-- ================= Expected Result ================= -->
+    <div class="box">
+      <h2>Expected Result</h2>
+
+      <p>
+        The intended final result is a scene that feels like shallow, clear water. The
+        upper part of the scene shows a moving water surface with waves and shifting
+        reflections. Beneath the surface, the ground remains visible, and soft caustic
+        light patterns move slowly across it.
+      </p>
+
+      <p>
+        Overall, the scene is meant to feel calm and believable, allowing the viewer to
+        clearly observe how light, motion, and geometry interact in a water environment.
+      </p>
     </div>
 
     <footer>
-      Final Project – Water Pinball
+      Final Project – Computer Graphics
     </footer>
 
   </div>
